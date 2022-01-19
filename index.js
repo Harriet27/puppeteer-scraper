@@ -12,9 +12,9 @@ const puppeteer = require('puppeteer');
     await page.goto(url, { waitUntil: 'networkidle2' });
 
     let data = await page.evaluate(() => {
-        let title = document.getElementsByClassName("taxonName")[0].innerText;
+        let name = document.getElementsByClassName("taxonName")[0].innerText;
         return {
-            title: title,
+            plant_name: name,
         };
     });
     console.log('data: ', data);
